@@ -24,7 +24,7 @@ jobs:
           dependencies: sudo apt-get install libxtst-dev libevdev-dev --assume-yes
         - os: macos-latest
           # TODO: We can't test this on github, we can't set accessibility yet.
-          test: cargo test --verbose --all-features -- --skip test_listen_and_simulate
+          test: cargo test --verbose --all-features 
         - os: ubuntu-latest
           # TODO unstable_grab feature is not supported on Linux.
           test: cargo test --verbose --all-features
