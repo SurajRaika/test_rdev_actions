@@ -6,3 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+lazy_static = "1.4.0"
+rdev = "0.5.3"
+serde = {version = "1.0", features = ["derive"], optional=true}
+
+
+
+[dev-dependencies]
+# Some tests interact with the real OS. We can't hit the OS in parallel
+# because that leads to unexpected behavior and flaky tests, so we need
+# to run thoses tests in sequence instead.
+serial_test = "0.4"
